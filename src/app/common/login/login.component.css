@@ -1,0 +1,307 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 300;
+}
+body ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 300;
+}
+body :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  opacity: 1;
+  font-weight: 300;
+}
+body ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  opacity: 1;
+  font-weight: 300;
+}
+body :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 300;
+}
+
+.register {
+  color: #f5f7f9;
+}
+
+.wrapper {
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #22221b 0%, #22221b 100%);
+  background: linear-gradient(to bottom right, #22221b 0%, #22221b 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.wrapper.form-success .container h1 {
+  -webkit-transform: translateY(85px);
+          transform: translateY(85px);
+}
+.container {
+  margin: 0 auto;
+  padding: 80px 0;
+  height: 400px;
+  text-align: center;
+}
+.container h1 {
+  font-size: 40px;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease-in-put;
+          transition-timing-function: ease-in-put;
+  font-weight: 200;
+}
+form {
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+form input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  font-weight: 300;
+}
+form input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+form input:focus {
+  background-color: white;
+  width: 300px;
+  color: #434651;
+}
+form button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  color: #434651;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+
+form button:hover {
+  background-color: #f5f7f9;
+}
+
+.error {
+  color: #DC6B6B;
+  font-size: 17px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+.bg-boxes{
+/*Set the container for the svg elements to take up the whole window and hide objects outside of the window*/
+  height: 100%;
+  min-height: 240px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+svg{
+/*Set defaults for svg columns. Opacity set to 0 so the elements are invisible before the animation begins and will not show up on browsers without animation*/
+  -webkit-animation: riser 20s infinite;
+  animation: riser 20s infinite;
+  opacity: 0;
+  overflow: visible;
+  position: absolute;
+}
+
+.bubble{
+ /*Set the defaults for the "bubbles". transform-origin should always be the center-point of the object including blank-space within the svg. Since the object should be centered, this is equal to the width of the object. The default bubble is 100px by 100px in an svg object with a width of 200px*/
+  -webkit-animation: rotator 20s linear infinite;
+  animation: rotator 20s linear infinite;
+  fill: #FFF;
+  -webkit-transform-origin: 100px 100px;
+  transform-origin: 100px 100px;
+}
+#col1{
+/*Since this element is larger than the set default, I want it to rise a little faster to give a subtle sense of depth*/
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
+}
+#bub1{
+/*The transform-origin has to be redefined because this bubble is not the set default size*/
+  -webkit-transform-origin: 150px 150px;
+  transform-origin: 150px 150px;
+}
+
+#col2{
+/*To offset the columns, adjust their left attribute and add an animation-delay*/
+  left: 15%;
+  -webkit-animation-delay: 18s;
+  animation-delay: 18s;
+}
+
+#col3{
+  left: 30%;
+  -webkit-animation-delay: 14s;
+  animation-delay: 14s;
+  -webkit-animation-duration: 17s;
+  animation-duration: 17s;
+}
+
+#bub3{
+  -webkit-animation-delay: 14s;
+  animation-delay: 14s;
+  -webkit-transform-origin: 130px 130px;
+  transform-origin: 130px 130px;
+}
+
+#col4{
+  left: 45%;
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  -webkit-animation-duration: 22s;
+  animation-duration: 22s;
+}
+
+#bub4{
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  -webkit-transform-origin: 80px 80px;
+  transform-origin: 80px 80px;
+}
+
+#col5{
+  left: 60%;
+  -webkit-animation-delay: 15s;
+  animation-delay: 15s;
+  -webkit-animation-duration: 18s;
+  animation-duration: 18s;
+}
+
+#bub5{
+  -webkit-animation-delay: 15s;
+  animation-delay: 15s;
+  -webkit-transform-origin: 120px 120px;
+  transform-origin: 120px 120px;
+}
+
+#col6{
+  left: 75%;
+  -webkit-animation-delay: 19s;
+  animation-delay: 19s;
+}
+
+#col7{
+  left: 90%;
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+}
+
+#col8{
+  left: -5%;
+  -webkit-animation-delay: 11s;
+  animation-delay: 11s;
+}
+
+#col9{
+  left: 25%;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+#col10{
+  left: 50%;
+  -webkit-animation-delay: 12s;
+  animation-delay: 12s;
+}
+
+#col11{
+  left: 67%;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-duration: 25s;
+  animation-duration: 25s;
+}
+
+#bub11{
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-transform-origin: 50px 50px;
+  transform-origin: 50px 50px;
+}
+
+/*Rotation Animation - Should be set to a factor of 360 to prevent jumpiness*/
+@-webkit-keyframes rotator{
+  to{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotator{
+  to{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes riser{
+  0%{
+    opacity: 0.2;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  100%{
+    opacity: 0.2;
+    -webkit-transform: translateY(-250px);
+    transform: translateY(-250px);
+  }
+}
+
+@keyframes riser{
+  0%{
+    opacity: 0.2;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  100%{
+    opacity: 0.2;
+    -webkit-transform: translateY(-250px);
+    transform: translateY(-250px);
+  }
+}
