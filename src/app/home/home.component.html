@@ -1,0 +1,103 @@
+<div id="wrapper">
+  <div id="sidebar-wrapper">
+    <div class="people-list" id="people-list">
+      <div class="media">
+        <a class="pull-left" href="#">
+          <img class="media-object dp img-circle" src="{{'https://hitesh-batcave.herokuapp.com/' + user.avatar}}" style="width: 70px; height:70px;">
+        </a>
+        <div class="media-body">
+          <h5 class="media-heading">{{user.fullName}} </h5>
+          <small><a href="#" (click)="logout($event)">Logout</a></small>
+        </div>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search" [formControl]="searchDraft">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="search-text" *ngIf="isLoadingUser">
+        <div class="loader">Loading
+          <span class="loader-dot">.</span>
+          <span class="loader-dot">.</span>
+          <span class="loader-dot">.</span>
+        </div>
+      </div>
+      <ul class="list" *ngIf="!isSearchDraft">
+        <li class="clearfix" *ngFor="let row of users">
+          <img src="{{'https://hitesh-batcave.herokuapp.com/' + row.avatar}}" class="img-circle" alt="avatar" />
+          <div class="about" (click)="selectThread($event, row)">
+            <div class="name">{{row.fullName}} <span class="badge" *ngIf="true">{{getUnreadMessages(row.id)}}</span></div>
+            <div class="status" *ngIf="isOnline(row.id)">
+              <i class="fa fa-circle online"></i> online
+            </div>
+            <div class="status" *ngIf="!isOnline(row.id)">
+              <i class="fa fa-circle offline"></i> offline
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="list" *ngIf="isSearchDraft">
+        <li class="clearfix" *ngFor="let row of searchUsers">
+          <img src="{{'https://hitesh-batcave.herokuapp.com/' + row.avatar}}" class="img-circle" alt="avatar" />
+          <div class="about" (click)="selectSearchUser($event, row)">
+            <div class="name">{{row.fullName}} </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="page-content-wrapper">
+    <div class="chat" *ngIf="currentThread">
+      <div class="chat-header clearfix">
+        <img src="{{'https://hitesh-batcave.herokuapp.com/' + currentThread.avatar}}" class="img-circle" alt="avatar" />
+
+        <div class="chat-about">
+          <div class="chat-with">{{currentThread.fullName}}</div>
+          <div class="chat-num-messages"></div>
+        </div>
+        <a href="#" (click)="toggledClick($event)"><i class="glyphicon glyphicon-log-in"></i></a>
+      </div>
+        <div class="chat-history" id="chat-history">
+          <ul>
+            <li class="clearfix" *ngFor="let message of messages">
+              <div *ngIf="message.senderId == user.id">
+                <div class="message-data align-right">
+                  <span class="message-data-name user-1">{{message.senderName}}</span> <i class="fa fa-circle me"></i>
+                </div>
+                <div class="message other-message float-right" [style.color]="message?.meta" [style.border-color]="message?.meta">
+                  {{message.text}}
+                </div>
+              </div>
+              <div *ngIf="message.senderId !== user.id">
+                <div class="message-data">
+                  <span class="message-data-name user-2"><i class="fa fa-circle online"></i> {{message.senderName}}</span>
+                </div>
+                <div class="message my-message" [style.color]="message?.meta" [style.border-color]="message?.meta">
+                  {{message.text}}
+                </div>
+              </div>
+            </li>
+            <li *ngIf="isTyping">
+              <div class="message-data">
+                <span class="message-data-name user-2">
+                  <div class="typing"><i class="fa fa-circle online"></i> Typing
+                    <span class="loader-dot">.</span>
+                    <span class="loader-dot">.</span>
+                    <span class="loader-dot">.</span>
+                  </div>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="chat-message clearfix">
+          <div class="textarea">
+            <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="2"
+            (keydown.enter)="onEnter($event)"
+            [(ngModel)]="draftMessage"
+            [formControl]="textareaDraft"
+            autofocus></textarea>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
