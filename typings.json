@@ -1,0 +1,9 @@
+{
+  "globalDependencies": {
+    "jquery": "registry:dt/jquery#1.10.0+20170104155652",
+    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20161116080703"
+  },
+  "dependencies": {
+    "lodash": "registry:npm/lodash#4.0.0+20161015015725"
+  }
+}

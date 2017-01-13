@@ -1,0 +1,61 @@
+{
+  "name": "batcave",
+  "productName": "Batcave",
+  "version": "1.0.0",
+  "description": "Batcave is an chat application desktop app based on Electron.",
+  "main": "main.js",
+  "author": "Hitesh Balar <www.hiteshbalar.com>",
+  "contributors": [
+    {
+      "name": "Hitesh Balar",
+      "email": "hsbalar@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hsbalar/batcave.git"
+  },
+  "scripts": {
+    "start": "node start-electron.js",
+    "dev": "npm run start:webpack",
+    "start:webpack": "webpack -w",
+    "build": "webpack --config config/webpack.prod.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "~2.4.0",
+    "@angular/compiler": "~2.4.0",
+    "@angular/core": "~2.4.0",
+    "@angular/forms": "~2.4.0",
+    "@angular/http": "~2.4.0",
+    "@angular/platform-browser": "~2.4.0",
+    "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/router": "~3.4.0",
+    "core-js": "^2.4.1",
+    "lodash": "^4.0.1",
+    "ngx-uploader": "^2.0.5",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.45",
+    "angular2-template-loader": "^0.4.0",
+    "awesome-typescript-loader": "^2.2.4",
+    "css-loader": "^0.23.1",
+    "electron-prebuilt": "^1.4.13",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.15.0",
+    "jquery": "^3.1.1",
+    "null-loader": "^0.1.1",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.2",
+    "socket.io-client": "^1.7.2",
+    "style-loader": "^0.13.1",
+    "typescript": "~2.0.10",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0"
+  }
+}
