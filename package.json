@@ -42,6 +42,7 @@
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^2.2.4",
     "css-loader": "^0.23.1",
+    "electron-packager": "^8.5.0",
     "electron-prebuilt": "^1.4.13",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
