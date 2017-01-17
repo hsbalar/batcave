@@ -99,5 +99,12 @@
           </div>
         </div>
     </div>
+    <div *ngIf="!currentThread">
+      <div class="batcave-welcome">
+        <img src="{{homeImage}}" alt="">
+        <p><label>Welcome to Batcave</label></p>
+        <small>...search for people on your left box.</small>
+      </div>
+    </div>
   </div>
 </div>

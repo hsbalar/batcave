@@ -30,7 +30,7 @@ export class HomeComponent {
   isLoadingUser: boolean = false;
   isTyping: boolean = false;
   colorSet: any = ['#a5980d', '#fded02', '#01a252', '#a16a94', '#e8bbd0', '#01a0e4', '#FF0086', '#ad2bee', '#0e5a94', '#c35359'];
-
+  homeImage: any = "https://hitesh-batcave.herokuapp.com/home_image.png";
   public socket = io.connect('https://hitesh-batcave.herokuapp.com');
   constructor(private auth: AuthService, private _chatService: Chat, public el: ElementRef) {
     auth.subscribe((user) => {

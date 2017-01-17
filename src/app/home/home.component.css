@@ -465,3 +465,23 @@ body {
 .typing {
 	font-style: italic;
 }
+
+.batcave-welcome {
+  text-align: center;
+	margin-top: 200px;
+}
+
+.batcave-welcome p {
+	color: #ba6236;
+	padding-top: 10px;
+	font-size: 16px;
+	font-family: "menlo", consolas, monospace;
+}
+
+.batcave-welcome small {
+	color: #878573;
+}
+
+.batcave-welcome img {
+	height: 100px;
+}
