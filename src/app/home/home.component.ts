@@ -29,7 +29,7 @@ export class HomeComponent {
   isSearchDraft: boolean = false;
   isLoadingUser: boolean = false;
   isTyping: boolean = false;
-  colorSet: any = ['#a5980d', '#fded02', '#01a252', '#a16a94', '#e8bbd0', '#01a0e4', '#FF0086', '#ad2bee', '#0e5a94', '#c35359'];
+  colorSet: any = ['#ba6236', '#ae7313', '#a5980d', '#7d9726', '#5b9d48', '#36a166', '#9d6c7c', '#0e5a94', '#9d6c7c', '#5e6e5e'];
   homeImage: any = "https://hitesh-batcave.herokuapp.com/home_image.png";
   public socket = io.connect('https://hitesh-batcave.herokuapp.com');
   constructor(private auth: AuthService, private _chatService: Chat, public el: ElementRef) {
@@ -81,6 +81,7 @@ export class HomeComponent {
     this.socket.on("on:send-message", (data: any) => {
       let roomId = data.roomId;
       let room = rooms[roomId];
+      let senderId = data.senderId;
       if (!room) {
         rooms[roomId] = {
           unread:0,
@@ -99,6 +100,17 @@ export class HomeComponent {
         }
       } else {
         rooms[roomId].unread = rooms[roomId].unread + 1;
+      }
+      let index = this._users.indexOf(this._users.filter((el: any) => {
+        return (String(el.id) === String(senderId));
+      })[0]);
+      if (index === -1) {
+        let newUser = {
+          avatar: data.senderAvatar,
+          id: data.senderId,
+          fullName: data.senderName
+        }
+        this._users.unshift(newUser);
       }
     });
 
@@ -236,7 +248,8 @@ export class HomeComponent {
       let message = {
         roomId: this.currentThread.id,
         senderId: this._user.id,
-        senderName: this._user.firstName,
+        senderName: this._user.fullName,
+        senderAvatar: this._user.avatar,
         receiverId: rid,
         text: this.draftMessage,
         sentAt: today,

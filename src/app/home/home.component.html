@@ -3,7 +3,7 @@
     <div class="people-list" id="people-list">
       <div class="media">
         <a class="pull-left" href="#">
-          <img class="media-object dp img-circle" src="{{'https://hitesh-batcave.herokuapp.com/' + user.avatar}}" style="width: 70px; height:70px;">
+          <img class="media-object dp img-circle" src="{{user.avatar}}" style="width: 70px; height:70px;">
         </a>
         <div class="media-body">
           <h5 class="media-heading">{{user.fullName}} </h5>
@@ -23,7 +23,7 @@
       </div>
       <ul class="list" *ngIf="!isSearchDraft">
         <li class="clearfix" *ngFor="let row of users">
-          <img src="{{'https://hitesh-batcave.herokuapp.com/' + row.avatar}}" class="img-circle" alt="avatar" />
+          <img src="{{row.avatar}}" class="img-circle" alt="avatar" />
           <div class="about" (click)="selectThread($event, row)">
             <div class="name">{{row.fullName}} <span class="badge" *ngIf="true">{{getUnreadMessages(row.id)}}</span></div>
             <div class="status" *ngIf="isOnline(row.id)">
@@ -37,7 +37,7 @@
       </ul>
       <ul class="list" *ngIf="isSearchDraft">
         <li class="clearfix" *ngFor="let row of searchUsers">
-          <img src="{{'https://hitesh-batcave.herokuapp.com/' + row.avatar}}" class="img-circle" alt="avatar" />
+          <img src="{{row.avatar}}" class="img-circle" alt="avatar" />
           <div class="about" (click)="selectSearchUser($event, row)">
             <div class="name">{{row.fullName}} </div>
           </div>
@@ -48,7 +48,7 @@
   <div id="page-content-wrapper">
     <div class="chat" *ngIf="currentThread">
       <div class="chat-header clearfix">
-        <img src="{{'https://hitesh-batcave.herokuapp.com/' + currentThread.avatar}}" class="img-circle" alt="avatar" />
+        <img src="{{currentThread.avatar}}" class="img-circle" alt="avatar" />
 
         <div class="chat-about">
           <div class="chat-with">{{currentThread.fullName}}</div>
