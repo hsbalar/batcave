@@ -5,10 +5,6 @@
 
 Experience smooth texting in the dark environment with a classy batcave desktop app electron based on a cool dark theme. Just simple with coloured chat bubbles. Feel free to tell me any suggestions, or let me know about any issues. Enjoy!
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/qkXkHGGoSfcSHQTXHQ57j7t4/hsbalar/batcave'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/qkXkHGGoSfcSHQTXHQ57j7t4/hsbalar/batcave.svg' />
-</a>
-
 ### Screenshot
 
 ![screenshot](https://raw.githubusercontent.com/hsbalar/batcave/master/public/images/screen.png)
